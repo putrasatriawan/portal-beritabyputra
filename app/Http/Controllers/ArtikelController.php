@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArtikelRequest;
 use App\Models\Artikel;
 use App\Models\Kategori;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -21,9 +22,11 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
+        $artikel = Artikel::with(['kategori','user'])->get();
+
         return view('back.artikel.index')->with([
-            'artikel' => $artikel
+            'artikel' => $artikel,
+           
         ]);
     }
 

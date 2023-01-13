@@ -43,7 +43,7 @@
                         <td>{{ $item->judul }}</td>
                         <td>{{ $item->slug }}</td>
                         <td>{{ $item->kategori->nama_kategori }}</td>
-                        <td>{{ $item->users->name }}</td>
+                        <td>{{ $item->user->name }}</td>
                         <td>
                             @if ($item->is_active == 1 )
                             Publish

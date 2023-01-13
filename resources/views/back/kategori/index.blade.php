@@ -38,7 +38,7 @@
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->nama_kategori }}</td>
-                        <td>{{ $item->slug }}</td>
+                        <td>{{ $item->kategori_slug }}</td>
                         <td>
                             @if ($item->is_active == 1 )
                             Publish

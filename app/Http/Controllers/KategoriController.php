@@ -41,7 +41,7 @@ class KategoriController extends Controller
     public function store(KategoriRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->nama_kategori);
+        $data['kategori_slug'] = Str::slug($request->nama_kategori);
         Kategori::create($data);
         return redirect()->route('kategori.index')->with(['success' => 'Data berhasil ditambah !']);
     }
