@@ -46,7 +46,7 @@
                             <ul class="list cat-list">
                                 <li>
                                     <a href=" {{ url( 'kategori-artikel/'.
-                                       $item->slug) }}"
+                                       $item->kategori_slug) }}"
                                        class="d-flex">
                                         <p>{{$item->nama_kategori }}</p>
                                     </a>
