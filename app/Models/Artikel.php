@@ -20,10 +20,10 @@ class Artikel extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
+        return $this->belongsTo('App\Models\Kategori');
     }
     public function users()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo("App\Models\User");
     }
 }

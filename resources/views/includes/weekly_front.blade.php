@@ -15,7 +15,9 @@
                         <div class="col-12">
                             <div class="weekly-news-active dot-style d-flex dot-style">
                                 @php
-                                $artikel = App\Models\Artikel::where('is_active', '1')->where('views' , '>=1')->get();
+                                $artikel = \App\Models\Artikel::with(['kategori'])->get();
+                                // $artikel = App\Models\Artikel::where('is_active', '1')->where('views' ,
+                                // '>=1')->get();
                                 @endphp
                                 @foreach ($artikel as $item)
                                 <div class="weekly-single">
@@ -26,7 +28,7 @@
                                     </div>
                                     <div class="weekly-caption">
                                         <span class="color1">{{ $item->kategori->nama_kategori }}</span>
-                                        <h4><a href="{{ route('detailartikel.show' ,$item->id) }}">{{ $item->judul
+                                        <h4><a href="{{ route('detailartikel.show' ,$item->slug) }}">{{ $item->judul
                                                 }}</a>
                                         </h4>
                                     </div>

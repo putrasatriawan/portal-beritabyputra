@@ -16,12 +16,11 @@ class KategoriFrontController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
-        $kategori = Kategori::all();
+       $artikel = Artikel::with(['kategori'])->get();
 
         return view('front.kategori_front.kategori_view_front')->with([
             'artikel' => $artikel,
-            'kategori' => $kategori
+
         ]);
     }
 
@@ -62,7 +61,7 @@ class KategoriFrontController extends Controller
     // }
     public function show_kategori($slug)
     {
-        $kategori = Kategori::where('slug', $slug)->first();
+        $kategori = Kategori::where('kategori_slug', $slug)->first();
         if ($kategori) {
             $artikel = Artikel::where('kategori_id', $kategori->id)->get();
             return view('front.kategori_front.kategori_view_front')->with([

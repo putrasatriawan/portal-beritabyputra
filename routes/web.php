@@ -59,7 +59,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 // }
 
 // );
-
+Route::get('/{slug}', [DetailArtikelController::class, 'show']);
 // Route::get('/Artikel-kategori/{$item->slug}', [KategoriFrontController::class, 'show_kategori'])->name('kategorife.show');
 
 Route::get('kategori-artikel/{slug}', [KategoriFrontController::class, 'show_kategori']);

@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <span class="color1">{{ $item->kategori->nama_kategori }}</span>
-                                        <h4><a href="{{ route('detailartikel.show' ,$item->id) }}">{{ $item->judul
+                                        <h4><a href="{{ route('detailartikel.show' ,$item->slug) }}">{{ $item->judul
                                                 }}</a></h4>
                                     </div>
                                     <div class="row">

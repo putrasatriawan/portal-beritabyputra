@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class DetailArtikelController extends Controller
 {
@@ -47,14 +49,21 @@ class DetailArtikelController extends Controller
      */
     public function show($id)
     {
-        Artikel::find($id)->increment('views');
-        $artikel = Artikel::findOrFail($id);
-        $kategori = Kategori::find($id);
-
-        return view('front.artikel_front.detail')->with([
-            'artikel' => $artikel,
-            'kategori' => $kategori
-        ]);
+        // Artikel::find($id)->increment('views');
+        // $artikel = Artikel::findOrFail($id);
+        // $kategori = Kategori::find($id);
+        Artikel::where('slug', $id)->increment('views');
+        $artikel = DB::table('artikel')->where('slug', $id)
+            ->join('kategori', 'artikel.kategori_id', '=', 'kategori.id')
+            ->select('artikel.*', 'kategori.nama_kategori')
+            ->get();
+        if ($artikel->count() > 0) {
+            return view('front.artikel_front.detail')->with([
+                'artikel' => $artikel
+            ]);
+        }else{
+            return('/');
+        }
     }
 
     /**

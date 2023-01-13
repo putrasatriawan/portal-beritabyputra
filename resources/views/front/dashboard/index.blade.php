@@ -21,7 +21,7 @@
                                      alt="">
                                 <div class="trend-top-cap">
                                     <span>{{ $item->kategori->nama_kategori }}</span>
-                                    <h2><a href="{{ route('detailartikel.show' ,$item->id) }}">{{ $item->judul }}</a>
+                                    <h2><a href="{{ route('detailartikel.show' ,$item->slug) }}">{{ $item->judul }}</a>
                                     </h2>
                                 </div>
                                 @endforeach
@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color1">{{ $item->kategori->nama_kategori }}</span>
-                                            <h4><a href="{{ route('detailartikel.show' ,$item->id) }}">{{ $item->judul
+                                            <h4><a href="{{ route('detailartikel.show' ,$item->slug) }}">{{ $item->judul
                                                     }}</a></h4>
                                             <div class="row">
                                                 <div class="col-md-6">

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="trending-tittle">
-                        <strong>{{ $kategori->nama_kategori }}</strong>
+                        <strong>{{ $artikel[0]->nama_kategori }}</strong>
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                     </div>
                 </div>
@@ -20,16 +20,16 @@
                     <!-- Trending Tittle -->
                     <div class="about-right mb-90">
                         <div class="about-img">
-                            <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }} "
+                            <img src="{{ asset('uploads/' . $artikel[0]->gambar_artikel) }} "
                                  width="250px"
                                  alt="">
                         </div>
                         <div class="section-tittle mb-30 pt-30">
-                            <h3>{{ $artikel->judul }}</h3>
+                            <h3>{{ $artikel[0]->judul }}</h3>
                         </div>
                         <div class="about-prea">
                             <p class="about-pera1 mb-25"
-                               <htmlspecialchars>{!! $artikel->body !!}</htmlspecialchars>
+                               <htmlspecialchars>{!! $artikel[0]->body !!}</htmlspecialchars>
                             </p>
                         </div>
                     </div>

@@ -12,13 +12,13 @@ class Kategori extends Model
     protected $table = 'kategori';
 
     protected $fillable = ([
-        'nama_kategori', 'slug', 'is_active'
+        'nama_kategori', 'kategori_slug', 'is_active'
     ]);
 
     protected $hidden = [];
 
-    // public function Artikel()
-    // {
-    //     return $this->hasMany(Artikel::class, 'kategori_id', 'id');
-    // }
+    public function Artikel()
+    {
+        return $this->hasMany('App\Models\Artikel');
+    }
 }

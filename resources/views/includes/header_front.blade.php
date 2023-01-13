@@ -31,7 +31,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
-                                <a href="index.html"><img src="{{ asset('front/assets/img/logo/logo.png') }}"
+                                <a href="/"><img src="{{ asset('front/assets/img/logo/logo.png') }}"
                                          alt=""></a>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                                 @endphp
                                                 @foreach ($kategories as $item)
                                                 <li><a href="{{ url(
-                                                    'kategori-artikel/'. $item->slug) }}">{{
+                                                    'kategori-artikel/'. $item->kategori_slug) }}">{{
                                                         $item->nama_kategori
                                                         }}</a></li>
                                                 @endforeach

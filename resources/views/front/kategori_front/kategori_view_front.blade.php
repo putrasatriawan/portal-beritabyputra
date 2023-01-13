@@ -30,7 +30,7 @@
                                                      alt="">
                                             </div>
                                             <div class="what-cap">
-                                                <h4><a href="{{ route('detailartikel.show' ,$item->id) }}">{{
+                                                <h4><a href="{{ route('detailartikel.show' ,$item->slug) }}">{{
                                                         $item->judul }}</a></h4>
                                             </div>
                                         </div>
